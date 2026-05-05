@@ -28,6 +28,16 @@ def is_palindrome(s):
     return s == s[::-1]  # Check if the string is equal to its reverse
 
 
+def fibonacci(n):
+    """Return the first n Fibonacci numbers."""
+    if n <= 0:
+        return []
+    seq = [0, 1]
+    for _ in range(2, n):
+        seq.append(seq[-1] + seq[-2])
+    return seq[:n]
+
+
 # Examples
 print("\nChecking if numbers are even or odd:")
 numbers = [1, 2, 3, 4, 5, 10, 15, 20, 42, 99]
@@ -49,6 +59,8 @@ for s in strings:
         print(f'"{s}" is a palindrome')
     else:
         print(f'"{s}" is not a palindrome')
+print("\nFibonacci sequence (first 10 numbers):")
+print(fibonacci(10))
 # for number in numbers:
 #     result = check_even_odd(number)
 #     print(f"{number} is {result}")
